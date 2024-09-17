@@ -68,6 +68,44 @@ public class TareaNodos {
     }
     
     public void ordenarNodos(){
-        
+        if (inicio == null || inicio.getEnlace() == null) {
+            JOptionPane.showMessageDialog(null, "La lista está vacía o tiene solo un elemento.");
+            return;
+        }
+
+        boolean huboCambios;
+        do {
+            Nodo actual = inicio;
+            Nodo siguiente = inicio.getEnlace();
+            Nodo anterior = null;
+            huboCambios = false;
+
+            while (siguiente != null) {
+                if (actual.getNombre().compareToIgnoreCase(siguiente.getNombre()) > 0) {
+                    huboCambios = true;
+
+                    if (anterior == null) {
+                        actual.setEnlace(siguiente.getEnlace());
+                        siguiente.setEnlace(actual);
+                        inicio = siguiente;
+                    } else {
+                        anterior.setEnlace(siguiente);
+                        actual.setEnlace(siguiente.getEnlace());
+                        siguiente.setEnlace(actual);
+                    }
+
+                    anterior = siguiente;
+                    siguiente = actual.getEnlace();
+                } else {
+                    anterior = actual;
+                    actual = siguiente;
+                    siguiente = siguiente.getEnlace();
+                }
+            }
+        } while (huboCambios);
+
+        JOptionPane.showMessageDialog(null, "La lista ha sido ordenada alfabéticamente por nombre.");
+    
+
     }
 }

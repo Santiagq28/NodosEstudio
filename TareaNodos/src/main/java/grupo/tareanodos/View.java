@@ -33,6 +33,7 @@ public class View extends javax.swing.JFrame {
         createNodes = new javax.swing.JButton();
         watchNodes = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        sortNodes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,6 +54,13 @@ public class View extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         jLabel1.setText("Generador de Múltiples Nodos");
 
+        sortNodes.setText("Ordenar Nodos");
+        sortNodes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sortNodesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -69,6 +77,10 @@ public class View extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(watchNodes)
                         .addGap(231, 231, 231))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(256, 256, 256)
+                .addComponent(sortNodes)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -79,7 +91,9 @@ public class View extends javax.swing.JFrame {
                 .addComponent(createNodes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(watchNodes)
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(sortNodes)
+                .addContainerGap(184, Short.MAX_VALUE))
         );
 
         pack();
@@ -92,6 +106,10 @@ public class View extends javax.swing.JFrame {
     private void watchNodesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_watchNodesActionPerformed
         objNodo.consultarNodos();
     }//GEN-LAST:event_watchNodesActionPerformed
+
+    private void sortNodesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortNodesActionPerformed
+        objNodo.ordenarNodos();
+    }//GEN-LAST:event_sortNodesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,6 +149,7 @@ public class View extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createNodes;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton sortNodes;
     private javax.swing.JButton watchNodes;
     // End of variables declaration//GEN-END:variables
 }

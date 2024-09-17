@@ -40,6 +40,11 @@
                   </Group>
               </Group>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
+              <Component id="sortNodes" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -51,7 +56,9 @@
               <Component id="createNodes" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="watchNodes" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="225" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="sortNodes" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="184" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -80,6 +87,14 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Generador de M&#xfa;ltiples Nodos"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="sortNodes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ordenar Nodos"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sortNodesActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
