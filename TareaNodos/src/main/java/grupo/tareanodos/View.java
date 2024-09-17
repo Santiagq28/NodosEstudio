@@ -34,6 +34,7 @@ public class View extends javax.swing.JFrame {
         watchNodes = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         sortNodes = new javax.swing.JButton();
+        ordenarAlfabeticamente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,10 +55,17 @@ public class View extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         jLabel1.setText("Generador de Múltiples Nodos");
 
-        sortNodes.setText("Ordenar Nodos");
+        sortNodes.setText("Ordenar Nodos 2.0");
         sortNodes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sortNodesActionPerformed(evt);
+            }
+        });
+
+        ordenarAlfabeticamente.setText("Ordenar Nodos");
+        ordenarAlfabeticamente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ordenarAlfabeticamenteActionPerformed(evt);
             }
         });
 
@@ -75,12 +83,12 @@ public class View extends javax.swing.JFrame {
                         .addComponent(createNodes)
                         .addGap(244, 244, 244))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(watchNodes)
-                        .addGap(231, 231, 231))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(256, 256, 256)
-                .addComponent(sortNodes)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sortNodes)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(watchNodes)
+                                .addComponent(ordenarAlfabeticamente)))
+                        .addGap(221, 221, 221))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,9 +99,11 @@ public class View extends javax.swing.JFrame {
                 .addComponent(createNodes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(watchNodes)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ordenarAlfabeticamente)
                 .addGap(18, 18, 18)
                 .addComponent(sortNodes)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
 
         pack();
@@ -110,6 +120,10 @@ public class View extends javax.swing.JFrame {
     private void sortNodesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortNodesActionPerformed
         objNodo.ordenarNodos();
     }//GEN-LAST:event_sortNodesActionPerformed
+
+    private void ordenarAlfabeticamenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordenarAlfabeticamenteActionPerformed
+        objNodo.ordenarEnOrden();
+    }//GEN-LAST:event_ordenarAlfabeticamenteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,6 +163,7 @@ public class View extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createNodes;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton ordenarAlfabeticamente;
     private javax.swing.JButton sortNodes;
     private javax.swing.JButton watchNodes;
     // End of variables declaration//GEN-END:variables
